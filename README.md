@@ -1,320 +1,378 @@
-# ImageAI (v3.0.3)
-
-
-
-[![Build Status](https://travis-ci.com/OlafenwaMoses/ImageAI.svg?branch=master)](https://travis-ci.com/OlafenwaMoses/ImageAI)  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/OlafenwaMoses/ImageAI/blob/master/LICENSE) [![PyPI version](https://badge.fury.io/py/imageai.svg)](https://badge.fury.io/py/imageai)   [![Downloads](https://pepy.tech/badge/imageai/month)](https://pepy.tech/project/imageai) [![Downloads](https://pepy.tech/badge/imageai/week)](https://pepy.tech/project/imageai)
-
-An open-source python library built to empower developers to build applications and systems with self-contained Deep Learning and Computer Vision capabilities using simple and few lines of code.
- 
- If you will like to sponsor this project, kindly visit the <strong>[Github sponsor page](https://github.com/sponsors/OlafenwaMoses)</strong>.
- 
- 
-## ---------------------------------------------------
-## Introducing TheiaEngine.
-
-![](https://raw.githubusercontent.com/Gen-XR/TheiaEngine/main/logo.png)
-
-We the creators of ImageAI are glad to announce [TheiaEngine](https://www.genxr.co/theia-engine), the next-generation computer Vision AI API capable of all computer vision tasks in a single API call and available via REST API to all programming languages. Features include
-- **Detect 300+ objects** ( 220 more objects than ImageAI)
-- **Provide answers to any content or context questions** asked on an image
-  - very useful to get information on any object, action or information without needing to train a new custom model for every tasks
--  **Generate scene description and summary**
--  **Convert 2D image to 3D pointcloud and triangular mesh**
--  **Semantic Scene mapping of objects, walls, floors, etc**
--  **Stateless Face recognition and emotion detection**
--  **Image generation and augmentation from prompt**
--  etc.
-
-Visit [https://www.genxr.co/theia-engine](https://www.genxr.co/theia-engine) to try the demo and join in the beta testing today.
-## ---------------------------------------------------
- 
-![](logo1.png)
-
-Developed and maintained by [Moses Olafenwa](https://twitter.com/OlafenwaMoses)
-
----
-
-Built with simplicity in mind, **ImageAI** 
-    supports a list of state-of-the-art Machine Learning algorithms for image prediction, custom image prediction, object detection, video detection, video object tracking
-    and image predictions trainings. **ImageAI** currently supports image prediction and training using 4 different Machine Learning algorithms 
-    trained on the ImageNet-1000 dataset. **ImageAI** also supports object detection, video detection and object tracking  using RetinaNet, YOLOv3 and TinyYOLOv3 trained on COCO dataset. Finally, **ImageAI** allows you to train custom models for performing detection and recognition of new objects. 
-   
-Eventually, **ImageAI** will provide support for a wider and more specialized aspects of Computer Vision
-
-
-**New Release : ImageAI 3.0.2**
-
-What's new:
-- PyTorch backend
-- TinyYOLOv3 model training
-
-
-### TABLE OF CONTENTS
-- <a href="#installation" > :white_square_button: Installation</a>
-- <a href="#features" > :white_square_button: Features</a>
-- <a href="#documentation" > :white_square_button: Documentation</a>
-- <a href="#sponsors" > :white_square_button: Sponsors</a>
-- <a href="#sample" > :white_square_button: Projects Built on ImageAI</a>
-- <a href="#real-time-and-high-performance-implementation" > :white_square_button: High Performance Implementation</a>
-- <a href="#recommendation" > :white_square_button: AI Practice Recommendations</a>
-- <a href="#contact" > :white_square_button: Contact Developers</a>
-- <a href="#citation" > :white_square_button: Citation</a>
-- <a href="#ref" > :white_square_button: References</a>
-
-
-
-## Installation
-<div id="installation"></div>
- 
-To install ImageAI, run the python installation instruction below in the command line:
-
-- [Download and Install](https://www.python.org/downloads/) **Python 3.7**, **Python 3.8**, **Python 3.9** or **Python 3.10**
-- Install dependencies
-  - **CPU**: Download [requirements.txt](https://github.com/OlafenwaMoses/ImageAI/blob/master/requirements.txt) file and install via the command
-    ```
-    pip install -r requirements.txt
-    ```
-    or simply copy and run the command below
-
-    ```
-    pip install cython pillow>=7.0.0 numpy>=1.18.1 opencv-python>=4.1.2 torch>=1.9.0 --extra-index-url https://download.pytorch.org/whl/cpu torchvision>=0.10.0 --extra-index-url https://download.pytorch.org/whl/cpu pytest==7.1.3 tqdm==4.64.1 scipy>=1.7.3 matplotlib>=3.4.3 mock==4.0.3
-    ```
-
-  - **GPU/CUDA**: Download [requirements_gpu.txt](https://github.com/OlafenwaMoses/ImageAI/blob/master/requirements_gpu.txt) file and install via the command
-    ```
-    pip install -r requirements_gpu.txt
-    ```
-    or smiply copy and run the command below
-    ```
-    pip install cython pillow>=7.0.0 numpy>=1.18.1 opencv-python>=4.1.2 torch>=1.9.0 --extra-index-url https://download.pytorch.org/whl/cu102 torchvision>=0.10.0 --extra-index-url https://download.pytorch.org/whl/cu102 pytest==7.1.3 tqdm==4.64.1 scipy>=1.7.3 matplotlib>=3.4.3 mock==4.0.3
-    ```
-- If you plan to train custom AI models, download [requirements_extra.txt](https://github.com/OlafenwaMoses/ImageAI/blob/master/requirements_extra.txt) file and install via the command
-  
-  ```
-  pip install -r requirements_extra.txt
-  ```
-  or simply copy and run the command below
-  ```
-  pip install pycocotools@git+https://github.com/gautamchitnis/cocoapi.git@cocodataset-master#subdirectory=PythonAPI
-  ```
-- Then run the command below to install ImageAI
-  ```
-  pip install imageai --upgrade
-  ```
-
-## Features
-<div id="features"></div>
+<div class="Box-sc-g0xbh4-0 bJMeLZ js-snippet-clipboard-copy-unpositioned" data-hpc="true"><article class="markdown-body entry-content container-lg" itemprop="text"><div class="markdown-heading" dir="auto"><h1 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">图像人工智能（v3.0.3）</font></font></h1><a id="user-content-imageai-v303" class="anchor" aria-label="永久链接：ImageAI (v3.0.3)" href="#imageai-v303"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><a href="https://travis-ci.com/OlafenwaMoses/ImageAI" rel="nofollow"><img src="https://camo.githubusercontent.com/219cb09e934451a3596587799b9e9196183e78fdd54cae8cb84762de7709f8e5/68747470733a2f2f7472617669732d63692e636f6d2f4f6c6166656e77614d6f7365732f496d61676541492e7376673f6272616e63683d6d6173746572" alt="构建状态" data-canonical-src="https://travis-ci.com/OlafenwaMoses/ImageAI.svg?branch=master" style="max-width: 100%;"></a>  <a href="https://github.com/OlafenwaMoses/ImageAI/blob/master/LICENSE"><img src="https://camo.githubusercontent.com/a4426cbe5c21edb002526331c7a8fbfa089e84a550567b02a0d829a98b136ad0/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4c6963656e73652d4d49542d79656c6c6f772e737667" alt="许可证：麻省理工学院" data-canonical-src="https://img.shields.io/badge/License-MIT-yellow.svg" style="max-width: 100%;"></a> <a href="https://badge.fury.io/py/imageai" rel="nofollow"><img src="https://camo.githubusercontent.com/a1554109ef03c3edc8b7c691cead153e3104b52b2bf709232c44addf1aec3ccc/68747470733a2f2f62616467652e667572792e696f2f70792f696d61676561692e737667" alt="PyPI版本" data-canonical-src="https://badge.fury.io/py/imageai.svg" style="max-width: 100%;"></a>   <a href="https://pepy.tech/project/imageai" rel="nofollow"><img src="https://camo.githubusercontent.com/b5d2c95a846fe52fc92fe7f258a4f1ee257a79fd8ecf3a4a07583a07d8c1ff3a/68747470733a2f2f706570792e746563682f62616467652f696d61676561692f6d6f6e7468" alt="下载" data-canonical-src="https://pepy.tech/badge/imageai/month" style="max-width: 100%;"></a> <a href="https://pepy.tech/project/imageai" rel="nofollow"><img src="https://camo.githubusercontent.com/67288075d2bc532e2b03d43b753dce0c4d94825e06f41c2faec79efd143647e8/68747470733a2f2f706570792e746563682f62616467652f696d61676561692f7765656b" alt="下载" data-canonical-src="https://pepy.tech/badge/imageai/week" style="max-width: 100%;"></a></p>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">一个开源 Python 库，旨在使开发人员能够使用简单的几行代码构建具有独立深度学习和计算机视觉功能的应用程序和系统。</font></font></p>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">如果您想赞助这个项目，请访问</font></font><strong><a href="https://github.com/sponsors/OlafenwaMoses"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Github 赞助页面</font></font></a></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">。</font></font></p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">-------------------------------------------------- -</font></font></h2><a id="user-content----------------------------------------------------" class="anchor" aria-label="永久链接：------------------------------------------------ ---" href="#---------------------------------------------------"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">介绍 Jarvis 和 TheiaEngine。</font></font></h2><a id="user-content-introducing-jarvis-and-theiaengine" class="anchor" aria-label="永久链接：Jarvis 和 TheiaEngine 简介。" href="#introducing-jarvis-and-theiaengine"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">我们 ImageAI 的创建者很高兴宣布 2 个新的 AI 项目，在您的个人计算机和服务器上提供最先进的生成式 AI、LLM 和图像理解。</font></font></p>
+<p dir="auto"><a href="https://jarvis.genxr.co" rel="nofollow"><img src="/OlafenwaMoses/ImageAI/raw/master/jarvis.png" alt="" style="max-width: 100%;"></a></p>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">在 PC/Mac 上安装 Jarvis，即可无限制地访问 LLM 支持的 AI 聊天，满足您的日常工作、研究和生成 AI 需求，并具有 100% 隐私和完全离线功能。</font></font></p>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">请访问</font></font><a href="https://jarvis.genxr.co/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">https://jarvis.genxr.co</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">开始。</font></font></p>
+<p dir="auto"><a href="https://www.genxr.co/theia-engine" rel="nofollow"><img src="/OlafenwaMoses/ImageAI/raw/master/theiaengine.png" alt="" style="max-width: 100%;"></a></p>
+<p dir="auto"><a href="https://www.genxr.co/theia-engine" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">TheiaEngine</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">是下一代计算机视觉 AI API，能够在单个 API 调用中执行所有生成和理解计算机视觉任务，并可通过 REST API 适用于所有编程语言。特点包括</font></font></p>
+<ul dir="auto">
+<li><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">检测 300 多个物体</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">（比 ImageAI 多 220 个物体）</font></font></li>
+<li><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">回答</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">有关图像的
+任何内容或上下文问题</font></font><ul dir="auto">
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">获取有关任何对象、操作或信息的信息非常有用，无需为每个任务训练新的自定义模型</font></font></li>
+</ul>
+</li>
+<li><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">生成场景描述和摘要</font></font></strong></li>
+<li><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">将 2D 图像转换为 3D 点云和三角网格</font></font></strong></li>
+<li><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">物体、墙壁、地板等的语义场景映射</font></font></strong></li>
+<li><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">无状态人脸识别和情绪检测</font></font></strong></li>
+<li><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">根据提示生成图像和增强图像</font></font></strong></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">ETC。</font></font></li>
+</ul>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">请访问</font></font><a href="https://www.genxr.co/theia-engine" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">https://www.genxr.co/theia-engine</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">尝试演示并立即加入 Beta 测试。</font></font></p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">-------------------------------------------------- -</font></font></h2><a id="user-content-----------------------------------------------------1" class="anchor" aria-label="永久链接：------------------------------------------------ ---" href="#----------------------------------------------------1"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><a target="_blank" rel="noopener noreferrer" href="/OlafenwaMoses/ImageAI/blob/master/logo1.png"><img src="/OlafenwaMoses/ImageAI/raw/master/logo1.png" alt="" style="max-width: 100%;"></a></p>
+<p dir="auto"><font style="vertical-align: inherit;"><a href="https://twitter.com/OlafenwaMoses" rel="nofollow"><font style="vertical-align: inherit;">由摩西·奥拉芬瓦</font></a><font style="vertical-align: inherit;">开发和维护</font></font><a href="https://twitter.com/OlafenwaMoses" rel="nofollow"><font style="vertical-align: inherit;"></font></a></p>
+<hr>
+<p dir="auto"><font style="vertical-align: inherit;"></font><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">ImageAI</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">在构建时考虑到简单性，</font><font style="vertical-align: inherit;">
+支持一系列最先进的机器学习算法，用于图像预测、自定义图像预测、对象检测、视频检测、视频对象跟踪和图像预测训练。</font></font><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">ImageAI</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">目前支持使用在 ImageNet-1000 数据集上训练的 4 种不同机器学习算法进行图像预测和训练。</font></font><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">ImageAI</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">还支持使用在 COCO 数据集上训练的 RetinaNet、YOLOv3 和 TinyYOLOv3 进行对象检测、视频检测和对象跟踪。最后，</font></font><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">ImageAI</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">允许您训练自定义模型来执行新对象的检测和识别。</font></font></p>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">最终，</font></font><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">ImageAI</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">将为计算机视觉更广泛、更专业的方面提供支持</font></font></p>
+<p dir="auto"><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">新版本：ImageAI 3.0.2</font></font></strong></p>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">什么是新的：</font></font></p>
+<ul dir="auto">
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">PyTorch 后端</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">TinyYOLOv3模型训练</font></font></li>
+</ul>
+<div class="markdown-heading" dir="auto"><h3 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">目录</font></font></h3><a id="user-content-table-of-contents" class="anchor" aria-label="永久链接：目录" href="#table-of-contents"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<ul dir="auto">
+<li><a href="#installation"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">🔳 安装</font></font></a></li>
+<li><a href="#features"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">🔳 特点</font></font></a></li>
+<li><a href="#documentation"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">🔳 文档</font></font></a></li>
+<li><a href="#sponsors"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">🔳 赞助商</font></font></a></li>
+<li><a href="#sample"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">🔳 基于 ImageAI 构建的项目</font></font></a></li>
+<li><a href="#real-time-and-high-performance-implementation"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">🔳 高性能实施</font></font></a></li>
+<li><a href="#recommendation"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">🔳 AI 实践建议</font></font></a></li>
+<li><a href="#contact"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">🔳 联系开发者</font></font></a></li>
+<li><a href="#citation"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">🔳 引用</font></font></a></li>
+<li><a href="#ref"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">🔳 参考文献</font></font></a></li>
+</ul>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">安装</font></font></h2><a id="user-content-installation" class="anchor" aria-label="永久链接：安装" href="#installation"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<div id="user-content-installation" dir="auto"></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">要安装 ImageAI，请在命令行中运行以下 python 安装指令：</font></font></p>
+<ul dir="auto">
+<li>
+<p dir="auto"><a href="https://www.python.org/downloads/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">下载并安装</font></font></a> <strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Python 3.7</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">、</font></font><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Python 3.8</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">、</font></font><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Python 3.9</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">或</font></font><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Python 3.10</font></font></strong></p>
+</li>
+<li>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">安装依赖项</font></font></p>
+<ul dir="auto">
+<li>
+<p dir="auto"><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">CPU</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">：下载</font></font><a href="https://github.com/OlafenwaMoses/ImageAI/blob/master/requirements.txt"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">requirements.txt</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">文件并通过命令安装</font></font></p>
+<div class="snippet-clipboard-content notranslate position-relative overflow-auto"><pre class="notranslate"><code>pip install -r requirements.txt
+</code></pre><div class="zeroclipboard-container">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn btn-invisible js-clipboard-copy m-2 p-0 tooltipped-no-delay d-flex flex-justify-center flex-items-center" data-copy-feedback="Copied!" data-tooltip-direction="w" value="pip install -r requirements.txt" tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon">
+    <path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path>
+</svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none">
+    <path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"></path>
+</svg>
+    </clipboard-copy>
+  </div></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">或者只需复制并运行以下命令</font></font></p>
+<div class="snippet-clipboard-content notranslate position-relative overflow-auto"><pre class="notranslate"><code>pip install cython pillow&gt;=7.0.0 numpy&gt;=1.18.1 opencv-python&gt;=4.1.2 torch&gt;=1.9.0 --extra-index-url https://download.pytorch.org/whl/cpu torchvision&gt;=0.10.0 --extra-index-url https://download.pytorch.org/whl/cpu pytest==7.1.3 tqdm==4.64.1 scipy&gt;=1.7.3 matplotlib&gt;=3.4.3 mock==4.0.3
+</code></pre><div class="zeroclipboard-container">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn btn-invisible js-clipboard-copy m-2 p-0 tooltipped-no-delay d-flex flex-justify-center flex-items-center" data-copy-feedback="Copied!" data-tooltip-direction="w" value="pip install cython pillow>=7.0.0 numpy>=1.18.1 opencv-python>=4.1.2 torch>=1.9.0 --extra-index-url https://download.pytorch.org/whl/cpu torchvision>=0.10.0 --extra-index-url https://download.pytorch.org/whl/cpu pytest==7.1.3 tqdm==4.64.1 scipy>=1.7.3 matplotlib>=3.4.3 mock==4.0.3" tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon">
+    <path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path>
+</svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none">
+    <path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"></path>
+</svg>
+    </clipboard-copy>
+  </div></div>
+</li>
+<li>
+<p dir="auto"><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">GPU/CUDA</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">：下载</font></font><a href="https://github.com/OlafenwaMoses/ImageAI/blob/master/requirements_gpu.txt"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">requirements_gpu.txt</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">文件并通过命令安装</font></font></p>
+<div class="snippet-clipboard-content notranslate position-relative overflow-auto"><pre class="notranslate"><code>pip install -r requirements_gpu.txt
+</code></pre><div class="zeroclipboard-container">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn btn-invisible js-clipboard-copy m-2 p-0 tooltipped-no-delay d-flex flex-justify-center flex-items-center" data-copy-feedback="Copied!" data-tooltip-direction="w" value="pip install -r requirements_gpu.txt" tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon">
+    <path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path>
+</svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none">
+    <path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"></path>
+</svg>
+    </clipboard-copy>
+  </div></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">或只需复制并运行以下命令</font></font></p>
+<div class="snippet-clipboard-content notranslate position-relative overflow-auto"><pre class="notranslate"><code>pip install cython pillow&gt;=7.0.0 numpy&gt;=1.18.1 opencv-python&gt;=4.1.2 torch&gt;=1.9.0 --extra-index-url https://download.pytorch.org/whl/cu102 torchvision&gt;=0.10.0 --extra-index-url https://download.pytorch.org/whl/cu102 pytest==7.1.3 tqdm==4.64.1 scipy&gt;=1.7.3 matplotlib&gt;=3.4.3 mock==4.0.3
+</code></pre><div class="zeroclipboard-container">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn btn-invisible js-clipboard-copy m-2 p-0 tooltipped-no-delay d-flex flex-justify-center flex-items-center" data-copy-feedback="Copied!" data-tooltip-direction="w" value="pip install cython pillow>=7.0.0 numpy>=1.18.1 opencv-python>=4.1.2 torch>=1.9.0 --extra-index-url https://download.pytorch.org/whl/cu102 torchvision>=0.10.0 --extra-index-url https://download.pytorch.org/whl/cu102 pytest==7.1.3 tqdm==4.64.1 scipy>=1.7.3 matplotlib>=3.4.3 mock==4.0.3" tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon">
+    <path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path>
+</svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none">
+    <path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"></path>
+</svg>
+    </clipboard-copy>
+  </div></div>
+</li>
+</ul>
+</li>
+<li>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">如果您计划训练自定义 AI 模型，请下载</font></font><a href="https://github.com/OlafenwaMoses/ImageAI/blob/master/requirements_extra.txt"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">requirements_extra.txt</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">文件并通过命令安装</font></font></p>
+<div class="snippet-clipboard-content notranslate position-relative overflow-auto"><pre class="notranslate"><code>pip install -r requirements_extra.txt
+</code></pre><div class="zeroclipboard-container">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn btn-invisible js-clipboard-copy m-2 p-0 tooltipped-no-delay d-flex flex-justify-center flex-items-center" data-copy-feedback="Copied!" data-tooltip-direction="w" value="pip install -r requirements_extra.txt" tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon">
+    <path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path>
+</svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none">
+    <path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"></path>
+</svg>
+    </clipboard-copy>
+  </div></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">或者只需复制并运行以下命令</font></font></p>
+<div class="snippet-clipboard-content notranslate position-relative overflow-auto"><pre class="notranslate"><code>pip install pycocotools@git+https://github.com/gautamchitnis/cocoapi.git@cocodataset-master#subdirectory=PythonAPI
+</code></pre><div class="zeroclipboard-container">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn btn-invisible js-clipboard-copy m-2 p-0 tooltipped-no-delay d-flex flex-justify-center flex-items-center" data-copy-feedback="Copied!" data-tooltip-direction="w" value="pip install pycocotools@git+https://github.com/gautamchitnis/cocoapi.git@cocodataset-master#subdirectory=PythonAPI" tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon">
+    <path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path>
+</svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none">
+    <path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"></path>
+</svg>
+    </clipboard-copy>
+  </div></div>
+</li>
+<li>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">然后运行以下命令安装ImageAI</font></font></p>
+<div class="snippet-clipboard-content notranslate position-relative overflow-auto"><pre class="notranslate"><code>pip install imageai --upgrade
+</code></pre><div class="zeroclipboard-container">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn btn-invisible js-clipboard-copy m-2 p-0 tooltipped-no-delay d-flex flex-justify-center flex-items-center" data-copy-feedback="Copied!" data-tooltip-direction="w" value="pip install imageai --upgrade" tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon">
+    <path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path>
+</svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none">
+    <path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"></path>
+</svg>
+    </clipboard-copy>
+  </div></div>
+</li>
+</ul>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">特征</font></font></h2><a id="user-content-features" class="anchor" aria-label="永久链接：特点" href="#features"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<div id="user-content-features" dir="auto"></div>
 <table>
-  <tr>
-    <td><h2> Image Classification</h2> </td>
+  <tbody><tr>
+    <td><div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">图像分类</font></font></h2><a id="user-content--image-classification" class="anchor" aria-label="永久链接：图像分类" href="#-image-classification"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div> </td>
   </tr>
   <tr>
-    <td><img src="data-images/1.jpg" >
-    <h4>ImageAI provides 4 different algorithms and model types to perform image prediction, trained on the ImageNet-1000 dataset. The 4 algorithms provided for image prediction include MobileNetV2, ResNet50, InceptionV3 and DenseNet121.
-    Click the link below to see the full sample codes, explanations and best practices guide.</h4>
-    <a href="imageai/Classification"> >>> Get Started</a>
+    <td><a target="_blank" rel="noopener noreferrer" href="/OlafenwaMoses/ImageAI/blob/master/data-images/1.jpg"><img src="/OlafenwaMoses/ImageAI/raw/master/data-images/1.jpg" style="max-width: 100%;"></a>
+    <div class="markdown-heading" dir="auto"><h4 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">ImageAI 提供 4 种不同的算法和模型类型来执行图像预测，并在 ImageNet-1000 数据集上进行训练。为图像预测提供的 4 种算法包括 MobileNetV2、ResNet50、InceptionV3 和 DenseNet121。单击下面的链接查看完整的示例代码、说明和最佳实践指南。</font></font></h4><a id="user-content-imageai-provides-4-different-algorithms-and-model-types-to-perform-image-prediction-trained-on-the-imagenet-1000-dataset-the-4-algorithms-provided-for-image-prediction-include-mobilenetv2-resnet50-inceptionv3-and-densenet121----click-the-link-below-to-see-the-full-sample-codes-explanations-and-best-practices-guide" class="anchor" aria-label="永久链接：ImageAI 提供 4 种不同的算法和模型类型来执行图像预测，并在 ImageNet-1000 数据集上进行训练。为图像预测提供的 4 种算法包括 MobileNetV2、ResNet50、InceptionV3 和 DenseNet121。单击下面的链接查看完整的示例代码、说明和最佳实践指南。" href="#imageai-provides-4-different-algorithms-and-model-types-to-perform-image-prediction-trained-on-the-imagenet-1000-dataset-the-4-algorithms-provided-for-image-prediction-include-mobilenetv2-resnet50-inceptionv3-and-densenet121----click-the-link-below-to-see-the-full-sample-codes-explanations-and-best-practices-guide"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+    <a href="/OlafenwaMoses/ImageAI/blob/master/imageai/Classification"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">&gt;&gt;&gt; 开始使用</font></font></a>
     </td>
   </tr>
-  
- </table>
-
- <div id="features"></div>
+ </tbody></table>
+ <div id="user-content-features" dir="auto"></div>
 <table>
-  <tr>
-    <td><h2> Object Detection </h2> </td>
+  <tbody><tr>
+    <td><div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">物体检测</font></font></h2><a id="user-content--object-detection-" class="anchor" aria-label="永久链接：物体检测" href="#-object-detection-"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div> </td>
   </tr>
   <tr>
     <td>
-        <img src="data-images/image2new.jpg">
-        <h4>ImageAI provides very convenient and powerful methods to perform object detection on images and extract each object from the image. The object detection class provides support for RetinaNet, YOLOv3 and TinyYOLOv3, with options to adjust for state of the art performance or real time processing. Click the link below to see the full sample codes, explanations and best practices guide.</h4>
-    <a href="imageai/Detection"> >>> Get Started</a>
+        <a target="_blank" rel="noopener noreferrer" href="/OlafenwaMoses/ImageAI/blob/master/data-images/image2new.jpg"><img src="/OlafenwaMoses/ImageAI/raw/master/data-images/image2new.jpg" style="max-width: 100%;"></a>
+        <div class="markdown-heading" dir="auto"><h4 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">ImageAI提供了非常方便且强大的方法来对图像进行对象检测并从图像中提取每个对象。对象检测类提供对 RetinaNet、YOLOv3 和 TinyYOLOv3 的支持，并提供调整最先进性能或实时处理的选项。单击下面的链接查看完整的示例代码、说明和最佳实践指南。</font></font></h4><a id="user-content-imageai-provides-very-convenient-and-powerful-methods-to-perform-object-detection-on-images-and-extract-each-object-from-the-image-the-object-detection-class-provides-support-for-retinanet-yolov3-and-tinyyolov3-with-options-to-adjust-for-state-of-the-art-performance-or-real-time-processing-click-the-link-below-to-see-the-full-sample-codes-explanations-and-best-practices-guide" class="anchor" aria-label="永久链接：ImageAI 提供了非常方便且强大的方法来对图像进行对象检测并从图像中提取每个对象。对象检测类提供对 RetinaNet、YOLOv3 和 TinyYOLOv3 的支持，并提供调整最先进性能或实时处理的选项。单击下面的链接查看完整的示例代码、说明和最佳实践指南。" href="#imageai-provides-very-convenient-and-powerful-methods-to-perform-object-detection-on-images-and-extract-each-object-from-the-image-the-object-detection-class-provides-support-for-retinanet-yolov3-and-tinyyolov3-with-options-to-adjust-for-state-of-the-art-performance-or-real-time-processing-click-the-link-below-to-see-the-full-sample-codes-explanations-and-best-practices-guide"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+    <a href="/OlafenwaMoses/ImageAI/blob/master/imageai/Detection"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">&gt;&gt;&gt; 开始使用</font></font></a>
     </td>
   </tr>
-  
- </table>
-
-
+ </tbody></table>
 <table>
-  <tr>
-    <td><h2> Video Object Detection & Analysis</h2> </td>
+  <tbody><tr>
+    <td><div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">视频对象检测与分析</font></font></h2><a id="user-content--video-object-detection--analysis" class="anchor" aria-label="永久链接：视频对象检测与分析" href="#-video-object-detection--analysis"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div> </td>
   </tr>
   <tr>
-    <td><img src="data-images/video_analysis_visualization.jpg">
-    <h4>ImageAI provides very convenient and powerful methods to perform object detection in videos. The video object detection class provided only supports the current state-of-the-art RetinaNet. Click the link to see the full videos, sample codes, explanations and best practices guide.</h4>
-    <a href="imageai/Detection/VIDEO.md"> >>> Get Started</a>
+    <td><a target="_blank" rel="noopener noreferrer" href="/OlafenwaMoses/ImageAI/blob/master/data-images/video_analysis_visualization.jpg"><img src="/OlafenwaMoses/ImageAI/raw/master/data-images/video_analysis_visualization.jpg" style="max-width: 100%;"></a>
+    <div class="markdown-heading" dir="auto"><h4 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">ImageAI 提供了非常方便且强大的方法来执行视频中的对象检测。提供的视频对象检测类仅支持当前最先进的RetinaNet。单击链接查看完整视频、示例代码、说明和最佳实践指南。</font></font></h4><a id="user-content-imageai-provides-very-convenient-and-powerful-methods-to-perform-object-detection-in-videos-the-video-object-detection-class-provided-only-supports-the-current-state-of-the-art-retinanet-click-the-link-to-see-the-full-videos-sample-codes-explanations-and-best-practices-guide" class="anchor" aria-label="永久链接：ImageAI 提供了非常方便且强大的方法来执行视频中的对象检测。提供的视频对象检测类仅支持当前最先进的RetinaNet。单击链接查看完整视频、示例代码、说明和最佳实践指南。" href="#imageai-provides-very-convenient-and-powerful-methods-to-perform-object-detection-in-videos-the-video-object-detection-class-provided-only-supports-the-current-state-of-the-art-retinanet-click-the-link-to-see-the-full-videos-sample-codes-explanations-and-best-practices-guide"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+    <a href="/OlafenwaMoses/ImageAI/blob/master/imageai/Detection/VIDEO.md"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">&gt;&gt;&gt; 开始使用</font></font></a>
     </td>
   </tr>
-  
- </table>
-
-
+ </tbody></table>
  <table>
-  <tr>
-    <td><h2> Custom Classification model training </h2> </td>
+  <tbody><tr>
+    <td><div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">自定义分类模型训练</font></font></h2><a id="user-content--custom-classification-model-training-" class="anchor" aria-label="永久链接：自定义分类模型训练" href="#-custom-classification-model-training-"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div> </td>
   </tr>
   <tr>
     <td>
-        <img src="data-images/idenprof.jpg">
-        <h4>ImageAI provides classes and methods for you to train a new model that can be used to perform prediction on your own custom objects. You can train your custom models using MobileNetV2, ResNet50, InceptionV3 and DenseNet in 5 lines of code. Click the link below to see the guide to preparing training images, sample training codes, explanations and best practices.</h4>
-    <a href="imageai/Classification/CUSTOMTRAINING.md"> >>> Get Started</a>
+        <a target="_blank" rel="noopener noreferrer" href="/OlafenwaMoses/ImageAI/blob/master/data-images/idenprof.jpg"><img src="/OlafenwaMoses/ImageAI/raw/master/data-images/idenprof.jpg" style="max-width: 100%;"></a>
+        <div class="markdown-heading" dir="auto"><h4 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">ImageAI 提供了类和方法，供您训练新模型，该模型可用于对您自己的自定义对象执行预测。您可以使用 MobileNetV2、ResNet50、InceptionV3 和 DenseNet 在 5 行代码中训练自定义模型。单击下面的链接查看准备训练图像、示例训练代码、说明和最佳实践的指南。</font></font></h4><a id="user-content-imageai-provides-classes-and-methods-for-you-to-train-a-new-model-that-can-be-used-to-perform-prediction-on-your-own-custom-objects-you-can-train-your-custom-models-using-mobilenetv2-resnet50-inceptionv3-and-densenet-in-5-lines-of-code-click-the-link-below-to-see-the-guide-to-preparing-training-images-sample-training-codes-explanations-and-best-practices" class="anchor" aria-label="永久链接：ImageAI 提供了类和方法，供您训练新模型，该模型可用于对您自己的自定义对象执行预测。您可以使用 MobileNetV2、ResNet50、InceptionV3 和 DenseNet 在 5 行代码中训练自定义模型。单击下面的链接查看准备训练图像、示例训练代码、说明和最佳实践的指南。" href="#imageai-provides-classes-and-methods-for-you-to-train-a-new-model-that-can-be-used-to-perform-prediction-on-your-own-custom-objects-you-can-train-your-custom-models-using-mobilenetv2-resnet50-inceptionv3-and-densenet-in-5-lines-of-code-click-the-link-below-to-see-the-guide-to-preparing-training-images-sample-training-codes-explanations-and-best-practices"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+    <a href="/OlafenwaMoses/ImageAI/blob/master/imageai/Classification/CUSTOMTRAINING.md"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">&gt;&gt;&gt; 开始使用</font></font></a>
     </td>
   </tr>
-  
- </table>
-
+ </tbody></table>
  <table>
-  <tr>
-    <td><h2> Custom Model Classification</h2> </td>
+  <tbody><tr>
+    <td><div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">定制型号分类</font></font></h2><a id="user-content--custom-model-classification" class="anchor" aria-label="永久链接：自定义模型分类" href="#-custom-model-classification"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div> </td>
   </tr>
   <tr>
-    <td><img src="data-images/4.jpg">
-    <h4>ImageAI provides classes and methods for you to run image prediction your own custom objects using your own model trained with ImageAI Model Training class. You can use your custom models trained with MobileNetV2, ResNet50, InceptionV3 and DenseNet and the JSON file containing the mapping of the custom object names. Click the link below to see the guide to sample training codes, explanations, and best practices guide.</h4>
-    <a href="imageai/Classification/CUSTOMCLASSIFICATION.md"> >>> Get Started</a>
+    <td><a target="_blank" rel="noopener noreferrer" href="/OlafenwaMoses/ImageAI/blob/master/data-images/4.jpg"><img src="/OlafenwaMoses/ImageAI/raw/master/data-images/4.jpg" style="max-width: 100%;"></a>
+    <div class="markdown-heading" dir="auto"><h4 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">ImageAI 提供了类和方法，供您使用通过 ImageAI 模型训练类训练的您自己的模型运行图像预测您自己的自定义对象。您可以使用通过 MobileNetV2、ResNet50、InceptionV3 和 DenseNet 训练的自定义模型以及包含自定义对象名称映射的 JSON 文件。单击下面的链接可查看示例培训代码、说明和最佳实践指南的指南。</font></font></h4><a id="user-content-imageai-provides-classes-and-methods-for-you-to-run-image-prediction-your-own-custom-objects-using-your-own-model-trained-with-imageai-model-training-class-you-can-use-your-custom-models-trained-with-mobilenetv2-resnet50-inceptionv3-and-densenet-and-the-json-file-containing-the-mapping-of-the-custom-object-names-click-the-link-below-to-see-the-guide-to-sample-training-codes-explanations-and-best-practices-guide" class="anchor" aria-label="永久链接：ImageAI 提供了类和方法，供您使用通过 ImageAI 模型训练类训练的自己的模型来运行图像预测您自己的自定义对象。您可以使用通过 MobileNetV2、ResNet50、InceptionV3 和 DenseNet 训练的自定义模型以及包含自定义对象名称映射的 JSON 文件。单击下面的链接可查看示例培训代码、说明和最佳实践指南的指南。" href="#imageai-provides-classes-and-methods-for-you-to-run-image-prediction-your-own-custom-objects-using-your-own-model-trained-with-imageai-model-training-class-you-can-use-your-custom-models-trained-with-mobilenetv2-resnet50-inceptionv3-and-densenet-and-the-json-file-containing-the-mapping-of-the-custom-object-names-click-the-link-below-to-see-the-guide-to-sample-training-codes-explanations-and-best-practices-guide"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+    <a href="/OlafenwaMoses/ImageAI/blob/master/imageai/Classification/CUSTOMCLASSIFICATION.md"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">&gt;&gt;&gt; 开始使用</font></font></a>
     </td>
   </tr>
-  
- </table>
-
+ </tbody></table>
  <table>
-  <tr>
-    <td><h2> Custom Detection Model Training </h2> </td>
+  <tbody><tr>
+    <td><div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">自定义检测模型训练</font></font></h2><a id="user-content--custom-detection-model-training-" class="anchor" aria-label="永久链接：自定义检测模型训练" href="#-custom-detection-model-training-"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div> </td>
   </tr>
   <tr>
     <td>
-        <img src="data-images/headsets.jpg">
-        <h4>ImageAI provides classes and methods for you to train new YOLOv3 or TinyYOLOv3 object detection models on your custom dataset. This means you can train a model to detect literally any object of interest by providing the images, the annotations and training with ImageAI. Click the link below to see the guide to sample training codes, explanations, and best practices guide.</h4>
-    <a href="imageai/Detection/Custom/CUSTOMDETECTIONTRAINING.md"> >>> Get Started</a>
+        <a target="_blank" rel="noopener noreferrer" href="/OlafenwaMoses/ImageAI/blob/master/data-images/headsets.jpg"><img src="/OlafenwaMoses/ImageAI/raw/master/data-images/headsets.jpg" style="max-width: 100%;"></a>
+        <div class="markdown-heading" dir="auto"><h4 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">ImageAI 提供了类和方法，供您在自定义数据集上训练新的 YOLOv3 或 TinyYOLOv3 对象检测模型。这意味着您可以通过提供图像、注释和使用 ImageAI 进行训练来训练模型来检测任何感兴趣的对象。单击下面的链接可查看示例培训代码、说明和最佳实践指南的指南。</font></font></h4><a id="user-content-imageai-provides-classes-and-methods-for-you-to-train-new-yolov3-or-tinyyolov3-object-detection-models-on-your-custom-dataset-this-means-you-can-train-a-model-to-detect-literally-any-object-of-interest-by-providing-the-images-the-annotations-and-training-with-imageai-click-the-link-below-to-see-the-guide-to-sample-training-codes-explanations-and-best-practices-guide" class="anchor" aria-label="永久链接：ImageAI 提供了类和方法，供您在自定义数据集上训练新的 YOLOv3 或 TinyYOLOv3 对象检测模型。这意味着您可以通过提供图像、注释和使用 ImageAI 进行训练来训练模型来检测任何感兴趣的对象。单击下面的链接可查看示例培训代码、说明和最佳实践指南的指南。" href="#imageai-provides-classes-and-methods-for-you-to-train-new-yolov3-or-tinyyolov3-object-detection-models-on-your-custom-dataset-this-means-you-can-train-a-model-to-detect-literally-any-object-of-interest-by-providing-the-images-the-annotations-and-training-with-imageai-click-the-link-below-to-see-the-guide-to-sample-training-codes-explanations-and-best-practices-guide"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+    <a href="/OlafenwaMoses/ImageAI/blob/master/imageai/Detection/Custom/CUSTOMDETECTIONTRAINING.md"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">&gt;&gt;&gt; 开始使用</font></font></a>
     </td>
   </tr>
-  
- </table>
-
+ </tbody></table>
 <table>
-  <tr>
-    <td><h2> Custom Object Detection</h2> </td>
+  <tbody><tr>
+    <td><div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">自定义对象检测</font></font></h2><a id="user-content--custom-object-detection" class="anchor" aria-label="永久链接：自定义对象检测" href="#-custom-object-detection"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div> </td>
   </tr>
   <tr>
-    <td><img src="data-images/holo2-detected.jpg">
-    <h4>ImageAI now provides classes and methods for you detect and recognize your own custom objects in images using your own model trained with the DetectionModelTrainer class. You can use your custom trained YOLOv3 or TinyYOLOv3 model and the **.json** file generated during the training. Click the link below to see the guide to sample training codes, explanations, and best practices guide.</h4>
-    <a href="imageai/Detection/Custom/CUSTOMDETECTION.md"> >>> Get Started</a>
+    <td><a target="_blank" rel="noopener noreferrer" href="/OlafenwaMoses/ImageAI/blob/master/data-images/holo2-detected.jpg"><img src="/OlafenwaMoses/ImageAI/raw/master/data-images/holo2-detected.jpg" style="max-width: 100%;"></a>
+    <div class="markdown-heading" dir="auto"><h4 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">ImageAI 现在提供了类和方法，供您使用通过DetectionModelTrainer 类训练的您自己的模型来检测和识别图像中您自己的自定义对象。您可以使用自定义训练的 YOLOv3 或 TinyYOLOv3 模型以及训练期间生成的 **.json** 文件。单击下面的链接可查看示例培训代码、说明和最佳实践指南的指南。</font></font></h4><a id="user-content-imageai-now-provides-classes-and-methods-for-you-detect-and-recognize-your-own-custom-objects-in-images-using-your-own-model-trained-with-the-detectionmodeltrainer-class-you-can-use-your-custom-trained-yolov3-or-tinyyolov3-model-and-the-json-file-generated-during-the-training-click-the-link-below-to-see-the-guide-to-sample-training-codes-explanations-and-best-practices-guide" class="anchor" aria-label="永久链接：ImageAI 现在提供了一些类和方法，供您使用通过DetectionModelTrainer 类训练的您自己的模型来检测和识别图像中您自己的自定义对象。您可以使用自定义训练的 YOLOv3 或 TinyYOLOv3 模型以及训练期间生成的 **.json** 文件。单击下面的链接可查看示例培训代码、说明和最佳实践指南的指南。" href="#imageai-now-provides-classes-and-methods-for-you-detect-and-recognize-your-own-custom-objects-in-images-using-your-own-model-trained-with-the-detectionmodeltrainer-class-you-can-use-your-custom-trained-yolov3-or-tinyyolov3-model-and-the-json-file-generated-during-the-training-click-the-link-below-to-see-the-guide-to-sample-training-codes-explanations-and-best-practices-guide"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+    <a href="/OlafenwaMoses/ImageAI/blob/master/imageai/Detection/Custom/CUSTOMDETECTION.md"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">&gt;&gt;&gt; 开始使用</font></font></a>
     </td>
   </tr>
- </table>
-
-
+ </tbody></table>
 <table>
-  <tr>
-    <td><h2> Custom Video Object Detection & Analysis </h2> </td>
+  <tbody><tr>
+    <td><div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">自定义视频对象检测和分析</font></font></h2><a id="user-content--custom-video-object-detection--analysis-" class="anchor" aria-label="永久链接：自定义视频对象检测和分析" href="#-custom-video-object-detection--analysis-"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div> </td>
   </tr>
   <tr>
     <td>
-        <img src="data-images/customvideodetection.gif">
-        <h4>ImageAI now provides classes and methods for you detect and recognize your own custom objects in images using your own model trained with the DetectionModelTrainer class. You can use your custom trained YOLOv3 or TinyYOLOv3 model and the **.json** file generated during the training. Click the link below to see the guide to sample training codes, explanations, and best practices guide.</h4>
-    <a href="imageai/Detection/Custom/CUSTOMVIDEODETECTION.md"> >>> Get Started</a>
+        <animated-image data-catalyst=""><a target="_blank" rel="noopener noreferrer" href="/OlafenwaMoses/ImageAI/blob/master/data-images/customvideodetection.gif" data-target="animated-image.originalLink"><img src="/OlafenwaMoses/ImageAI/raw/master/data-images/customvideodetection.gif" style="max-width: 100%; display: inline-block;" data-target="animated-image.originalImage"></a>
+      <span class="AnimatedImagePlayer" data-target="animated-image.player" hidden="">
+        <a data-target="animated-image.replacedLink" class="AnimatedImagePlayer-images" href="https://github.com/OlafenwaMoses/ImageAI/blob/master/data-images/customvideodetection.gif" target="_blank">
+          
+        <span data-target="animated-image.imageContainer">
+            <img data-target="animated-image.replacedImage" alt="customvideodetection.gif" class="AnimatedImagePlayer-animatedImage" src="https://github.com/OlafenwaMoses/ImageAI/raw/master/data-images/customvideodetection.gif" style="display: block; opacity: 1;">
+          <canvas class="AnimatedImagePlayer-stillImage" aria-hidden="true" width="584" height="321"></canvas></span></a>
+        <button data-target="animated-image.imageButton" class="AnimatedImagePlayer-images" tabindex="-1" aria-label="Play customvideodetection.gif" hidden=""></button>
+        <span class="AnimatedImagePlayer-controls" data-target="animated-image.controls" hidden="">
+          <button data-target="animated-image.playButton" class="AnimatedImagePlayer-button" aria-label="Play customvideodetection.gif">
+            <svg aria-hidden="true" focusable="false" class="octicon icon-play" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M4 13.5427V2.45734C4 1.82607 4.69692 1.4435 5.2295 1.78241L13.9394 7.32507C14.4334 7.63943 14.4334 8.36057 13.9394 8.67493L5.2295 14.2176C4.69692 14.5565 4 14.1739 4 13.5427Z">
+            </path></svg>
+            <svg aria-hidden="true" focusable="false" class="octicon icon-pause" width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+              <rect x="4" y="2" width="3" height="12" rx="1"></rect>
+              <rect x="9" y="2" width="3" height="12" rx="1"></rect>
+            </svg>
+          </button>
+          <a data-target="animated-image.openButton" aria-label="Open customvideodetection.gif in new window" class="AnimatedImagePlayer-button" href="https://github.com/OlafenwaMoses/ImageAI/blob/master/data-images/customvideodetection.gif" target="_blank">
+            <svg aria-hidden="true" class="octicon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+              <path fill-rule="evenodd" d="M10.604 1h4.146a.25.25 0 01.25.25v4.146a.25.25 0 01-.427.177L13.03 4.03 9.28 7.78a.75.75 0 01-1.06-1.06l3.75-3.75-1.543-1.543A.25.25 0 0110.604 1zM3.75 2A1.75 1.75 0 002 3.75v8.5c0 .966.784 1.75 1.75 1.75h8.5A1.75 1.75 0 0014 12.25v-3.5a.75.75 0 00-1.5 0v3.5a.25.25 0 01-.25.25h-8.5a.25.25 0 01-.25-.25v-8.5a.25.25 0 01.25-.25h3.5a.75.75 0 000-1.5h-3.5z"></path>
+            </svg>
+          </a>
+        </span>
+      </span></animated-image>
+        <div class="markdown-heading" dir="auto"><h4 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">ImageAI 现在提供了类和方法，供您使用通过DetectionModelTrainer 类训练的您自己的模型来检测和识别图像中您自己的自定义对象。您可以使用自定义训练的 YOLOv3 或 TinyYOLOv3 模型以及训练期间生成的 **.json** 文件。单击下面的链接可查看示例培训代码、说明和最佳实践指南的指南。</font></font></h4><a id="user-content-imageai-now-provides-classes-and-methods-for-you-detect-and-recognize-your-own-custom-objects-in-images-using-your-own-model-trained-with-the-detectionmodeltrainer-class-you-can-use-your-custom-trained-yolov3-or-tinyyolov3-model-and-the-json-file-generated-during-the-training-click-the-link-below-to-see-the-guide-to-sample-training-codes-explanations-and-best-practices-guide-1" class="anchor" aria-label="永久链接：ImageAI 现在提供了一些类和方法，供您使用通过DetectionModelTrainer 类训练的您自己的模型来检测和识别图像中您自己的自定义对象。您可以使用自定义训练的 YOLOv3 或 TinyYOLOv3 模型以及训练期间生成的 **.json** 文件。单击下面的链接可查看示例培训代码、说明和最佳实践指南的指南。" href="#imageai-now-provides-classes-and-methods-for-you-detect-and-recognize-your-own-custom-objects-in-images-using-your-own-model-trained-with-the-detectionmodeltrainer-class-you-can-use-your-custom-trained-yolov3-or-tinyyolov3-model-and-the-json-file-generated-during-the-training-click-the-link-below-to-see-the-guide-to-sample-training-codes-explanations-and-best-practices-guide-1"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+    <a href="/OlafenwaMoses/ImageAI/blob/master/imageai/Detection/Custom/CUSTOMVIDEODETECTION.md"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">&gt;&gt;&gt; 开始使用</font></font></a>
     </td>
   </tr>
- </table>
-
-## Documentation
-<div id="documentation"></div>
-
-We have provided full documentation for all **ImageAI** classes and functions. Visit the link below:
-
-- Documentation - **English Version**  [https://imageai.readthedocs.io](https://imageai.readthedocs.io)
-
-
-## Sponsors
-<div id="sponsors"></div>
-
-
-## Real-Time and High Performance Implementation
-<div id="performance"></div>
-
-**ImageAI** provides abstracted and convenient implementations of state-of-the-art Computer Vision technologies. All of **ImageAI** implementations and code can work on any computer system with moderate CPU capacity. However, the speed of processing for operations like image prediction, object detection and others on CPU is slow and not suitable for real-time applications. To perform real-time Computer Vision operations with high performance, you need to use GPU enabled technologies.
-
-**ImageAI** uses the PyTorch backbone for it's Computer Vision operations. PyTorch supports both CPUs and GPUs ( Specifically NVIDIA GPUs.  You can get one for your PC or get a PC that has one) for machine learning and artificial intelligence algorithms' implementations.
-
-
-
-## Projects Built on ImageAI
-<div id="sample"></div>
-
-
-
-## AI Practice Recommendations
-<div id="recommendation"></div>
-
-For anyone interested in building AI systems and using them for business, economic,  social and research purposes, it is critical that the person knows the likely positive, negative and unprecedented impacts the use of such technologies will have.
-They must also be aware of approaches and practices recommended by experienced industry experts to ensure every use of AI brings overall benefit to mankind.
-We therefore recommend to everyone that wishes to use ImageAI and other AI tools and resources to read Microsoft's January 2018 publication on AI titled "The Future Computed : Artificial Intelligence and its role in society".
-Kindly follow the link below to download the publication.
-
-[https://blogs.microsoft.com/blog/2018/01/17/future-computed-artificial-intelligence-role-society](https://blogs.microsoft.com/blog/2018/01/17/future-computed-artificial-intelligence-role-society/)
-
-### Contact Developer
-<div id="contact"></div>
-
-- **Moses Olafenwa**
-    * _Email:_ guymodscientist@gmail.com
-    * _Twitter:_ [@OlafenwaMoses](https://twitter.com/OlafenwaMoses)
-    * _Medium:_ [@guymodscientist](https://medium.com/@guymodscientist)
-    * _Facebook:_ [moses.olafenwa](https://facebook.com/moses.olafenwa)
-- **John Olafenwa**
-    * _Email:_ johnolafenwa@gmail.com
-    * _Website:_ [https://john.aicommons.science](https://john.aicommons.science)
-    * _Twitter:_ [@johnolafenwa](https://twitter.com/johnolafenwa)
-    * _Medium:_ [@johnolafenwa](https://medium.com/@johnolafenwa)
-    * _Facebook:_ [olafenwajohn](https://facebook.com/olafenwajohn)
-
-
-### Citation
-<div id="citation"></div>
-
-You can cite **ImageAI** in your projects and research papers via the **BibTeX** entry below.  
-  
-```
-@misc {ImageAI,
+ </tbody></table>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">文档</font></font></h2><a id="user-content-documentation" class="anchor" aria-label="永久链接：文档" href="#documentation"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<div id="user-content-documentation" dir="auto"></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">我们提供了所有</font></font><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">ImageAI</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">类和函数的完整文档。访问以下链接：</font></font></p>
+<ul dir="auto">
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">文档 -</font></font><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">英文版</font></font></strong>  <a href="https://imageai.readthedocs.io" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">https://imageai.readthedocs.io</font></font></a></li>
+</ul>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">赞助商</font></font></h2><a id="user-content-sponsors" class="anchor" aria-label="永久链接：赞助商" href="#sponsors"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<div id="user-content-sponsors" dir="auto"></div>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">实时高性能实施</font></font></h2><a id="user-content-real-time-and-high-performance-implementation" class="anchor" aria-label="永久链接：实时和高性能实施" href="#real-time-and-high-performance-implementation"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<div id="user-content-performance" dir="auto"></div>
+<p dir="auto"><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">ImageAI</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">提供了最先进的计算机视觉技术的抽象且便捷的实现。所有</font></font><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">ImageAI</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">实现和代码都可以在任何具有中等 CPU 容量的计算机系统上运行。然而，CPU上的图像预测、目标检测等操作的处理速度较慢，不适合实时应用。要以高性能执行实时计算机视觉操作，您需要使用支持 GPU 的技术。</font></font></p>
+<p dir="auto"><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">ImageAI</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">使用 PyTorch 主干进行计算机视觉操作。 PyTorch 支持 CPU 和 GPU（特别是 NVIDIA GPU。您可以为您的 PC 配备一个 GPU，也可以为您的 PC 配备一个）用于机器学习和人工智能算法的实现。</font></font></p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">基于 ImageAI 的项目</font></font></h2><a id="user-content-projects-built-on-imageai" class="anchor" aria-label="永久链接：基于 ImageAI 的项目" href="#projects-built-on-imageai"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<div id="user-content-sample" dir="auto"></div>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">AI实践建议</font></font></h2><a id="user-content-ai-practice-recommendations" class="anchor" aria-label="永久链接：AI 实践建议" href="#ai-practice-recommendations"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<div id="user-content-recommendation" dir="auto"></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">对于任何有兴趣构建人工智能系统并将其用于商业、经济、社会和研究目的的人来说，了解此类技术的使用可能产生的积极、消极和前所未有的影响至关重要。他们还必须了解经验丰富的行业专家推荐的方法和实践，以确保人工智能的每一次使用都为人类带来整体利益。因此，我们建议所有希望使用 ImageAI 和其他 AI 工具和资源的人阅读 Microsoft 2018 年 1 月关于 AI 的出版物，题为“计算的未来：人工智能及其在社会中的作用”。请点击下面的链接下载该出版物。</font></font></p>
+<p dir="auto"><a href="https://blogs.microsoft.com/blog/2018/01/17/future-computed-artificial-intelligence-role-society/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">https://blogs.microsoft.com/blog/2018/01/17/future-compulated-artificial-intelligence-role-society</font></font></a></p>
+<div class="markdown-heading" dir="auto"><h3 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">联系开发商</font></font></h3><a id="user-content-contact-developer" class="anchor" aria-label="永久链接：联系开发人员" href="#contact-developer"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<div id="user-content-contact" dir="auto"></div>
+<ul dir="auto">
+<li><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">摩西·奥拉芬瓦</font></font></strong>
+<ul dir="auto">
+<li><em><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">电子邮件：</font></font></em> <a href="mailto:guymodscientist@gmail.com"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">guymodscientist@gmail.com</font></font></a></li>
+<li><em><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">推特：</font></font></em> <a href="https://twitter.com/OlafenwaMoses" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">@OlafenwaMoses</font></font></a></li>
+<li><em><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">媒体：</font></font></em> <a href="https://medium.com/@guymodscientist" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">@guymodscientist</font></font></a></li>
+<li><em><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">脸书：</font></font></em> <a href="https://facebook.com/moses.olafenwa" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">moses.olafenwa</font></font></a></li>
+</ul>
+</li>
+<li><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">约翰·奥拉芬瓦</font></font></strong>
+<ul dir="auto">
+<li><em><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">电子邮件：</font></font></em> <a href="mailto:johnolafenwa@gmail.com"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">johnolafenwa@gmail.com</font></font></a></li>
+<li><em><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">网站：</font></font></em> <a href="https://john.aicommons.science" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">https://john.aicommons.science</font></font></a></li>
+<li><em><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">推特：</font></font></em> <a href="https://twitter.com/johnolafenwa" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">@johnolafenwa</font></font></a></li>
+<li><em><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">媒体：</font></font></em> <a href="https://medium.com/@johnolafenwa" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">@johnolafenwa</font></font></a></li>
+<li><em><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">脸书：</font></font></em> <a href="https://facebook.com/olafenwajohn" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">奥拉芬瓦约翰</font></font></a></li>
+</ul>
+</li>
+</ul>
+<div class="markdown-heading" dir="auto"><h3 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">引文</font></font></h3><a id="user-content-citation" class="anchor" aria-label="永久链接：引文" href="#citation"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<div id="user-content-citation" dir="auto"></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">您可以通过下面的</font><strong><font style="vertical-align: inherit;">BibTeX</font></strong><font style="vertical-align: inherit;">条目在您的项目和研究论文中引用</font></font><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">ImageAI</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">。</font></font><strong><font style="vertical-align: inherit;"></font></strong><font style="vertical-align: inherit;"></font></p>
+<div class="snippet-clipboard-content notranslate position-relative overflow-auto"><pre class="notranslate"><code>@misc {ImageAI,
     author = "Moses",
     title  = "ImageAI, an open source python library built to empower developers to build applications and systems  with self-contained Computer Vision capabilities",
     url    = "https://github.com/OlafenwaMoses/ImageAI",
     month  = "mar",
     year   = "2018--"
 }
-```
-
-
-
- ### References
- <div id="ref"></div>
-
- 1. Somshubra Majumdar, DenseNet Implementation of the paper, Densely Connected Convolutional Networks in Keras
-[https://github.com/titu1994/DenseNet](https://github.com/titu1994/DenseNet)
- 2. Broad Institute of MIT and Harvard, Keras package for deep residual networks
-[https://github.com/broadinstitute/keras-resnet](https://github.com/broadinstitute/keras-resnet)
- 3. Fizyr, Keras implementation of RetinaNet object detection
-[https://github.com/fizyr/keras-retinanet](https://github.com/fizyr/keras-retinanet)
- 4. Francois Chollet, Keras code and weights files for popular deeplearning models
-[https://github.com/fchollet/deep-learning-models](https://github.com/fchollet/deep-learning-models)
- 5. Forrest N. et al, SqueezeNet: AlexNet-level accuracy with 50x fewer parameters and <0.5MB model size
-[https://arxiv.org/abs/1602.07360](https://arxiv.org/abs/1602.07360)
- 6. Kaiming H. et al, Deep Residual Learning for Image Recognition
-[https://arxiv.org/abs/1512.03385](https://arxiv.org/abs/1512.03385)
- 7. Szegedy. et al, Rethinking the Inception Architecture for Computer Vision
-[https://arxiv.org/abs/1512.00567](https://arxiv.org/abs/1512.00567)
- 8. Gao. et al, Densely Connected Convolutional Networks
-[https://arxiv.org/abs/1608.06993](https://arxiv.org/abs/1608.06993)
- 9. Tsung-Yi. et al, Focal Loss for Dense Object Detection
-[https://arxiv.org/abs/1708.02002](https://arxiv.org/abs/1708.02002)
- 10. O Russakovsky et al, ImageNet Large Scale Visual Recognition Challenge
-[https://arxiv.org/abs/1409.0575](https://arxiv.org/abs/1409.0575)
- 11. TY Lin et al, Microsoft COCO: Common Objects in Context
-[https://arxiv.org/abs/1405.0312](https://arxiv.org/abs/1405.0312)
- 12. Moses & John Olafenwa, A collection of images of identifiable professionals.
-[https://github.com/OlafenwaMoses/IdenProf](https://github.com/OlafenwaMoses/IdenProf)
- 13. Joseph Redmon and Ali Farhadi, YOLOv3: An Incremental Improvement.
-[https://arxiv.org/abs/1804.02767](https://arxiv.org/abs/1804.02767)
- 14. Experiencor, Training and Detecting Objects with YOLO3
-[https://github.com/experiencor/keras-yolo3](https://github.com/experiencor/keras-yolo3)
- 15. MobileNetV2: Inverted Residuals and Linear Bottlenecks
-[https://arxiv.org/abs/1801.04381](https://arxiv.org/abs/1801.04381)
- 16. YOLOv3 in PyTorch > ONNX > CoreML > TFLite [https://github.com/ultralytics/yolov3](https://github.com/ultralytics/yolov3)
+</code></pre><div class="zeroclipboard-container">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn btn-invisible js-clipboard-copy m-2 p-0 tooltipped-no-delay d-flex flex-justify-center flex-items-center" data-copy-feedback="Copied!" data-tooltip-direction="w" value="@misc {ImageAI,
+    author = &quot;Moses&quot;,
+    title  = &quot;ImageAI, an open source python library built to empower developers to build applications and systems  with self-contained Computer Vision capabilities&quot;,
+    url    = &quot;https://github.com/OlafenwaMoses/ImageAI&quot;,
+    month  = &quot;mar&quot;,
+    year   = &quot;2018--&quot;
+}" tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon">
+    <path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path>
+</svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none">
+    <path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"></path>
+</svg>
+    </clipboard-copy>
+  </div></div>
+<div class="markdown-heading" dir="auto"><h3 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">参考</font></font></h3><a id="user-content-references" class="anchor" aria-label="永久链接：参考文献" href="#references"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+ <div id="user-content-ref" dir="auto"></div>
+<ol dir="auto">
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Somshubra Majumdar，DenseNet 论文《Keras 中的密集连接卷积网络》的实现
+</font></font><a href="https://github.com/titu1994/DenseNet"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">https://github.com/titu1994/DenseNet</font></font></a></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">麻省理工学院和哈佛大学布罗德研究所，深度残差网络的 Keras 包
+</font></font><a href="https://github.com/broadinstitute/keras-resnet"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">https://github.com/broadinstitute/keras-resnet</font></font></a></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Fizyr，RetinaNet 对象检测的 Keras 实现
+</font></font><a href="https://github.com/fizyr/keras-retinanet"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">https://github.com/fizyr/keras-retinanet</font></font></a></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Francois Chollet，流行深度学习模型的 Keras 代码和权重文件
+</font></font><a href="https://github.com/fchollet/deep-learning-models"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">https://github.com/fchollet/deep-learning-models</font></font></a></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Forrest N. 等人，SqueezeNet：AlexNet 级精度，参数减少 50 倍，模型大小 &lt;0.5MB
+ </font></font><a href="https://arxiv.org/abs/1602.07360" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">https://arxiv.org/abs/1602.07360</font></font></a></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Kaiming H. 等人，图像识别的深度残差学习
+</font></font><a href="https://arxiv.org/abs/1512.03385" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">https://arxiv.org/abs/1512.03385</font></font></a></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">塞格迪。等人，重新思考计算机视觉的初始架构
+</font></font><a href="https://arxiv.org/abs/1512.00567" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">https://arxiv.org/abs/1512.00567</font></font></a></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">高.等人，密集连接的卷积网络
+</font></font><a href="https://arxiv.org/abs/1608.06993" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">https://arxiv.org/abs/1608.06993</font></font></a></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">宗毅.等人，密集物体检测的焦点损失
+</font></font><a href="https://arxiv.org/abs/1708.02002" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">https://arxiv.org/abs/1708.02002</font></font></a></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">O Russakovsky 等人，ImageNet 大规模视觉识别挑战赛
+</font></font><a href="https://arxiv.org/abs/1409.0575" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">https://arxiv.org/abs/1409.0575</font></font></a></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">TY Lin 等人，Microsoft COCO：上下文中的常见对象
+</font></font><a href="https://arxiv.org/abs/1405.0312" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">https://arxiv.org/abs/1405.0312</font></font></a></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">摩西和约翰·奥拉芬瓦，可识别专业人士的图像集。
+ </font></font><a href="https://github.com/OlafenwaMoses/IdenProf"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">https://github.com/OlafenwaMoses/IdenProf</font></font></a></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Joseph Redmon 和 Ali Farhadi，YOLOv3：渐进式改进。
+ </font></font><a href="https://arxiv.org/abs/1804.02767" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">https://arxiv.org/abs/1804.02767</font></font></a></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">体验，使用 YOLO3 训练和检测物体
+</font></font><a href="https://github.com/experiencor/keras-yolo3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">https://github.com/experiencor/keras-yolo3</font></font></a></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">MobileNetV2：倒置残差和线性瓶颈
+</font></font><a href="https://arxiv.org/abs/1801.04381" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">https://arxiv.org/abs/1801.04381</font></font></a></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">PyTorch 中的 YOLOv3 &gt; ONNX &gt; CoreML &gt; TFLite </font></font><a href="https://github.com/ultralytics/yolov3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">https://github.com/ultralytics/yolov3</font></font></a></li>
+</ol>
+</article></div>
